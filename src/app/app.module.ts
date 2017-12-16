@@ -3,16 +3,26 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { NewsService } from './news.service'
+import { NewsComponent } from './news/news.component'
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+import { NewsDetailComponent } from './news-detail/news-detail.component'
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+      NewsComponent,
+      NewsDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+      FormsModule,
+      HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [NewsService],
+  bootstrap: [NewsComponent]
 })
 export class AppModule { }
